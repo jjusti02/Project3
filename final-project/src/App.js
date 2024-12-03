@@ -1,24 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+
+
 
 function App() {
+
+  const [text, setText] = useState("First Text");
+  const [text2, setText2] = useState("Second Text");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className='App'>
+        <header>Name:</header>
+        <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
+        <header>Phone Number:</header>
+        <input type="text" value={text2} onChange={(e) => setText2(e.target.value)} />
+      </div>
   );
 }
 
