@@ -31,6 +31,7 @@ app.get("/download", (req, res) => {
 
   const filePath = "data.csv";
   fs.writeFileSync(filePath, csvContent);
+  res.send("Successful Download");
   res.download(filePath);
 });
 
